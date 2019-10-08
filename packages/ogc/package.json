@@ -1,0 +1,52 @@
+{
+  "name": "@google/wmslayer",
+  "version": "0.0.0",
+  "description": "Creates and manages per-zoom-level clusters for large amounts of markers.",
+  "keywords": [
+    "cluster",
+    "google",
+    "maps",
+    "marker"
+  ],
+  "homepage": "https://github.com/googlemaps/v3-utility-library/tree/master/wmslayer",
+  "bugs": {
+    "url": "https://github.com/googlemaps/v3-utility-library/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/googlemaps/v3-utility-library.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Google Inc.",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "main": "dist/ogc.umd.js",
+  "unpkg": "dist/ogc.min.js",
+  "module": "dist/ogc.esm.js",
+  "scripts": {
+    "prepare": "rollup --config",
+    "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://wombat-dressing-room.appspot.com",
+    "tag": "alpha"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "rollup": "^1.23.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript2": "^0.24.3",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@types/googlemaps": "^3.37.7",
+    "query-string": "^6.8.3"
+  }
+}
