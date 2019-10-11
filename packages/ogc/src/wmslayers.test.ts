@@ -16,7 +16,7 @@ beforeAll(() => {
 });
 
 afterAll(() => {
-  delete global["google"];
+  (global as any).google = {}
 });
 
 test("xyzToBounds is correct", () => {
