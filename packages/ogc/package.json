@@ -1,14 +1,15 @@
 {
-  "name": "@google/wmslayer",
+  "name": "@googlemaps/ogc",
   "version": "0.0.0",
-  "description": "Creates and manages per-zoom-level clusters for large amounts of markers.",
+  "description": "Provides OGC plugin to Google Maps with features such as WMSLayer.",
   "keywords": [
     "cluster",
     "google",
     "maps",
-    "marker"
+    "ogc",
+    "wms"
   ],
-  "homepage": "https://github.com/googlemaps/v3-utility-library/tree/master/wmslayer",
+  "homepage": "https://github.com/googlemaps/v3-utility-library/tree/master/package/ogc",
   "bugs": {
     "url": "https://github.com/googlemaps/v3-utility-library/issues"
   },
@@ -31,8 +32,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://wombat-dressing-room.appspot.com",
-    "tag": "alpha"
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
