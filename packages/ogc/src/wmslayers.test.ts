@@ -5,13 +5,19 @@ import { xyzToBounds, EPSG_3857_EXTENT, WMSLayer } from "./wmslayer";
 
 const ImageMapType = jest.fn();
 
-(global as any).google = {
-  maps: {
-    ImageMapType: ImageMapType,
-    Size: jest.fn((width, height) => ({ width, height })),
-    Point: jest.fn((x, y) => ({ x, y }))
-  }
-};
+beforeAll(() => {
+  (global as any).google = {
+    maps: {
+      ImageMapType: ImageMapType,
+      Size: jest.fn((width, height) => ({ width, height })),
+      Point: jest.fn((x, y) => ({ x, y }))
+    }
+  };
+});
+
+afterAll(() => {
+  delete global["google"];
+});
 
 test("xyzToBounds is correct", () => {
   expect(xyzToBounds(0, 0, 0)).toEqual([
@@ -22,7 +28,7 @@ test("xyzToBounds is correct", () => {
   ]);
 });
 
-test("WMSLayer can be called", () => {
+test("WMSLayer can be called with getTIleUrl", () => {
   const wms = WMSLayer({
     url: "https://www.mrlc.gov/geoserver/NLCD_Land_Cover/wms",
     layers: "mrlc_display:NLCD_2016_Land_Cover_L48",
