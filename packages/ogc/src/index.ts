@@ -1,3 +1,1 @@
-import { WMSLayer } from "./wmslayer";
-
-export { WMSLayer };
+export { WMSLayer } from "./wmslayer";
