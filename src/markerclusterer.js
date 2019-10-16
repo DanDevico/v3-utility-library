@@ -168,10 +168,6 @@ class ClusterIcon {
           // There is a fix for Issue 170 here:
           setTimeout(function () {
             mc.getMap().fitBounds(theBounds);
-            // Don't zoom beyond the max zoom level
-            if (mz !== null && (mc.getMap().getZoom() > mz)) {
-              mc.getMap().setZoom(mz + 1);
-            }
           }, 100);
         }
 
