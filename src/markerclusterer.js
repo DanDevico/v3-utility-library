@@ -153,6 +153,8 @@ class ClusterIcon {
         var theBounds;
         var mc = cClusterIcon.cluster_.getMarkerClusterer();
         var padding;
+        var mapMaxZoom;
+        var mz;
         /**
          * This event is fired when a cluster marker is clicked.
          * @name MarkerClusterer#click
@@ -166,13 +168,22 @@ class ClusterIcon {
         // the zoomOnClick property to false.
         if (mc.getZoomOnClick()) {
           // Zoom into the cluster.
+          mz = mc.getMaxZoom();
+          mapMaxZoom = mc.getMap().maxZoom;
+
           theBounds = cClusterIcon.cluster_.getBounds();
           padding = mc.getFitBoundsPadding();
+
+          mc.getMap().setOptions({ maxZoom: mz + 1 });
           mc.getMap().fitBounds(theBounds, padding);
           // There is a fix for Issue 170 here:
           setTimeout(function() {
             mc.getMap().fitBounds(theBounds, padding);
           }, 100);
+
+          setTimeout(function() {
+            mc.getMap().setOptions({ maxZoom: mapMaxZoom });
+          }, 500);
         }
 
         // Prevent event propagation to the map:
