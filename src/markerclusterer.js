@@ -770,7 +770,7 @@ class MarkerClusterer {
     this.listeners_ = [];
     this.activeMap_ = null;
     this.ready_ = false;
-    this.fitBoundsPadding = { left: 360 };
+    this.fitBoundsPadding = opt_options.fitBoundsPadding;
     this.gridSize_ = opt_options.gridSize || 60;
     this.minClusterSize_ = opt_options.minimumClusterSize || 2;
     this.maxZoom_ = opt_options.maxZoom || null;
