@@ -546,9 +546,9 @@ class Cluster {
     mz = this.markerClusterer_.getMaxZoom();
     if (mz !== null && this.map_.getZoom() > mz) {
       // Zoomed in past max zoom, so show the marker.
-      if (marker.getMap() !== this.map_) {
-        marker.setMap(this.map_);
-      }
+      // if (marker.getMap() !== this.map_) {
+      //   marker.setMap(this.map_);
+      // }
     } else if (mCount < this.minClusterSize_) {
       // Min cluster size not reached so show the marker.
       if (marker.getMap() !== this.map_) {
